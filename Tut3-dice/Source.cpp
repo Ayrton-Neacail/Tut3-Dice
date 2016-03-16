@@ -58,19 +58,18 @@ int main(){
 	
 		char prompt = 'G'; // user variable to start or stop the roll
 	
-		dice d; //dice object with defualt constructor
+		dice d; //dice object created
 	
 		
 		while (prompt != 'P'){
 		
-			cout << "enter any character except P to do a roll" << endl;   // output text to prompt
-		
-						// output text to prompt
+			cout << "enter any character except 'P' to do a roll or" << endl;   // output text to prompt user
+			cout << "enter the characer 'P' to stop the dice rolling" << endl;	// output text to prompt
 			
 			cin >> prompt;
 				//input for rolls
 			
-			Norolls++;
+			Norolls++; //increment roll counter after every roll done
 		
 			tmp = d.roll();
 		accum = tmp;

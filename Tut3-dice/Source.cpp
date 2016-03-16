@@ -46,7 +46,34 @@ float ave(dice a, int Norolls); //over loaded functions
 float ave(int darr[], int length); // over loaded functions
 int accum = 0;
 
+float average(dice a, int Norolls){
 
+	float av = (float)accum / (float)Norolls; //type casted the variables to hold float values
+	return av;
+
+}
+float ave(int darr[], int length){
+
+	float av = 0.000;
+	int arrayResult = 0;
+	
+
+	for (int count = 0; count < length; count++){
+
+		arrayResult = arrayResult + darr[count];
+
+
+		cout << "the roll:" << count + 1 << "is =" << darr[count] << endl;
+	
+	
+	
+	}
+	av = (float)arrayResult / (float)length;
+	return av;
+
+
+
+}
 int main(){
 	
 	int tmp = 0; // variable temporarily holds the result of the dice roll
@@ -58,7 +85,7 @@ int main(){
 	
 		char prompt = 'G'; // user variable to start or stop the roll
 	
-		dice d; //dice object created
+		dice *A; //dice object created
 	
 		
 		while (prompt != 'P'){
@@ -84,16 +111,11 @@ int main(){
 		
 			
 			
-	}
+		};
 	
-		
+		delete dice d; //deletes dice object after use
+
 		return 0;
 	
 }
 
-float average(dice a, int Norolls){
-	
-		float av = (float)accum / (float)Norolls;
-	return av;
-	
-}

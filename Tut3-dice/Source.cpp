@@ -85,7 +85,7 @@ int main(){
 	
 		char prompt = 'G'; // user variable to start or stop the roll
 	
-		dice *A; //dice object created
+		dice a= dice(); //dice object created
 	
 		
 		while (prompt != 'P'){
@@ -98,7 +98,7 @@ int main(){
 			
 			Norolls++; //increment roll counter after every roll done
 		
-			tmp = d.roll();
+			tmp = a.roll();
 		accum = tmp;
 		accum = accum + 1;
 		
@@ -107,13 +107,13 @@ int main(){
 			cout << "Result is :" << tmp << endl;
 		cout << "rolls:" << Norolls << endl;
 		
-			cout << "Dice function average: " << ave(d, Norolls) << endl;
+			cout << "Dice function average: " << ave(a, Norolls) << endl;
 		
 			
 			
 		};
 	
-		delete dice d; //deletes dice object after use
+		delete &a; //deletes dice object after use
 
 		return 0;
 	
